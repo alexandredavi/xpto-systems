@@ -1,0 +1,14 @@
+CREATE TABLE city (
+  id             BIGSERIAL NOT NULL,
+  cd_ibge        INTEGER,
+  nm_uf          CHARACTER VARYING(2),
+  nm_city        CHARACTER VARYING(255),
+  nm_capital     CHARACTER VARYING(255),
+  nu_longitude   NUMERIC,
+  nu_latitute    NUMERIC,
+  nm_no_accents  CHARACTER VARYING(255),
+  nm_alternative CHARACTER VARYING(255),
+  nm_microregion CHARACTER VARYING(255),
+  nm_mesoregion  CHARACTER VARYING(255),
+  CONSTRAINT pk_city PRIMARY KEY (id)
+);
