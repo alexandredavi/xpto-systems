@@ -1,4 +1,4 @@
-package com.xpto.cities.rest;
+package com.xpto.cities.endpoint;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.ws.rs.Path;

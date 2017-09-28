@@ -1,15 +1,13 @@
 package com.xpto.cities.entity;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import java.math.BigDecimal;
 
 @Entity
 @Table(name = "city")
-public class City {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class City extends BaseEntity<Long> implements LogicExclusion {
 
     @Column(name = "cd_ibge")
     private Integer ibgeC;
@@ -41,13 +39,8 @@ public class City {
     @Column(name = "nm_mesoregion")
     private String mesoregion;
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
+    @Column(name = "fg_excluded")
+    private boolean excluded;
 
     public Integer getIbgeC() {
         return ibgeC;
@@ -127,5 +120,15 @@ public class City {
 
     public void setMesoregion(String mesoregion) {
         this.mesoregion = mesoregion;
+    }
+
+    @Override
+    public boolean isExcluded() {
+        return excluded;
+    }
+
+    @Override
+    public void setExcluded(boolean excluded) {
+        this.excluded = excluded;
     }
 }

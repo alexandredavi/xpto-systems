@@ -10,5 +10,6 @@ CREATE TABLE city (
   nm_alternative CHARACTER VARYING(255),
   nm_microregion CHARACTER VARYING(255),
   nm_mesoregion  CHARACTER VARYING(255),
+  fg_excluded    BOOLEAN NOT NULL DEFAULT FALSE,
   CONSTRAINT pk_city PRIMARY KEY (id)
 );
