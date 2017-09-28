@@ -65,4 +65,14 @@ public class CityDao extends LogicExclusionCrudDao<City, Long> {
 
         return query.getResultList();
     }
+
+    public Long countRegisterByAttribute(String attribute) {
+        StringBuilder sb = new StringBuilder();
+        sb.append("SELECT COUNT(DISTINCT c.").append(attribute).append(") FROM City c ");
+
+        TypedQuery<Long> query = em.createQuery(sb.toString(), Long.class);
+        query.setMaxResults(1);
+
+        return query.getSingleResult();
+    }
 }

@@ -69,4 +69,12 @@ public class CityService extends CrudService<City, Long, CityDao> {
         }
         return dao.get().findCitiesByAttribute(attribute, filter);
     }
+
+    public Long countRegisterByColumn(String column) {
+        String attribute = CsvUtils.RELATION_CSV_ENTITY.get(column);
+        if (attribute == null) {
+            return 0L;
+        }
+        return dao.get().countRegisterByAttribute(attribute);
+    }
 }

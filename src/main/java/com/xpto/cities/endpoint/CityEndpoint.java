@@ -64,4 +64,10 @@ public class CityEndpoint extends CrudEndpoint<City, Long, CityDao, CityService>
     public Response findCitiesByCsvColumn(@PathParam("column") String column, @PathParam("filter") String filter) {
         return ok(service.get().findCitiesByCsvColumn(column, filter));
     }
+
+    @GET
+    @Path("/count-register-by-column/{column}")
+    public Response countRegisterByColumn(@PathParam("column") String column) {
+        return ok(service.get().countRegisterByColumn(column));
+    }
 }
