@@ -10,7 +10,7 @@ import java.math.BigDecimal;
 public class City extends BaseEntity<Long> implements LogicExclusion {
 
     @Column(name = "cd_ibge")
-    private Integer ibgeC;
+    private Integer ibge;
 
     @Column(name = "nm_uf")
     private String uf;
@@ -18,8 +18,8 @@ public class City extends BaseEntity<Long> implements LogicExclusion {
     @Column(name = "nm_city")
     private String name;
 
-    @Column(name = "nm_capital")
-    private String capital;
+    @Column(name = "fg_capital")
+    private boolean capital;
 
     @Column(name = "nu_longitude")
     private BigDecimal longitude;
@@ -42,12 +42,12 @@ public class City extends BaseEntity<Long> implements LogicExclusion {
     @Column(name = "fg_excluded")
     private boolean excluded;
 
-    public Integer getIbgeC() {
-        return ibgeC;
+    public Integer getIbge() {
+        return ibge;
     }
 
-    public void setIbgeC(Integer ibgeC) {
-        this.ibgeC = ibgeC;
+    public void setIbge(Integer ibge) {
+        this.ibge = ibge;
     }
 
     public String getUf() {
@@ -66,11 +66,11 @@ public class City extends BaseEntity<Long> implements LogicExclusion {
         this.name = name;
     }
 
-    public String getCapital() {
+    public boolean getCapital() {
         return capital;
     }
 
-    public void setCapital(String capital) {
+    public void setCapital(boolean capital) {
         this.capital = capital;
     }
 

@@ -16,6 +16,12 @@ public class CrudService<E extends BaseEntity<ID>, ID, D extends CrudDao<E, ID>>
         return dao.get().insert(entity);
     }
 
+    public void insert(final List<E> entities) {
+        entities.stream().forEach(entity -> {
+            dao.get().insert(entity);
+        });
+    }
+
     public E update(final E entity) {
         return dao.get().update(entity);
     }

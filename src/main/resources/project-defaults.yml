@@ -1,7 +1,7 @@
 swarm:
   datasources:
     data-sources:
-      CitiesDS:
+      citiesDS:
         driver-name: postgresql
         connection-url: jdbc:postgresql://localhost:5432/cities
         user-name: postgres
