@@ -37,4 +37,16 @@ public class CityEndpoint extends CrudEndpoint<City, Long, CityDao, CityService>
     public Response getCapitals() {
         return ok(service.get().getCapitals());
     }
+
+    @GET
+    @Path("/states-bigger-and-smaller-number-of-cities")
+    public Response statesBiggerAndSmallerNumberOfCities() {
+        return ok(service.get().statesBiggerAndSmallerNumberOfCities());
+    }
+
+    @GET
+    @Path("/number-of-cities-by-state")
+    public Response numberOfCitiesByState() {
+        return ok(service.get().numberOfCitiesByState());
+    }
 }

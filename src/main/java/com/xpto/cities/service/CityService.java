@@ -1,6 +1,7 @@
 package com.xpto.cities.service;
 
 import com.xpto.cities.dao.CityDao;
+import com.xpto.cities.dto.CitiesByStateDto;
 import com.xpto.cities.entity.City;
 
 import javax.ejb.Stateless;
@@ -8,7 +9,10 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 import static com.xpto.cities.utils.CsvUtils.*;
@@ -39,5 +43,16 @@ public class CityService extends CrudService<City, Long, CityDao> {
 
     public List<City> getCapitals() {
         return dao.get().getCapitals();
+    }
+
+    public List<CitiesByStateDto> statesBiggerAndSmallerNumberOfCities() {
+        List<CitiesByStateDto> citiesByStateDtos = dao.get().numberOfCitiesByState();
+        Optional<CitiesByStateDto> stateMaxCityNumber = citiesByStateDtos.stream().max(Comparator.comparing(CitiesByStateDto::getNumber));
+        Optional<CitiesByStateDto> stateMinCityNumber = citiesByStateDtos.stream().min(Comparator.comparing(CitiesByStateDto::getNumber));
+        return Arrays.asList(stateMaxCityNumber.get(), stateMinCityNumber.get());
+    }
+
+    public List<CitiesByStateDto> numberOfCitiesByState() {
+        return dao.get().numberOfCitiesByState();
     }
 }
