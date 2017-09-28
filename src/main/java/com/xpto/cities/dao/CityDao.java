@@ -43,4 +43,15 @@ public class CityDao extends LogicExclusionCrudDao<City, Long> {
 
         return query.getSingleResult();
     }
+
+    public List<City> findCitiesByState(String state) {
+        StringBuilder sb = new StringBuilder();
+        sb.append("SELECT c FROM City c ");
+        sb.append("WHERE c.uf = :uf ");
+
+        TypedQuery<City> query = em.createQuery(sb.toString(), City.class);
+        query.setParameter("uf", state);
+
+        return query.getResultList();
+    }
 }

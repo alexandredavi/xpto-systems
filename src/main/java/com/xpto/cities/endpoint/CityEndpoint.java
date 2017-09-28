@@ -52,4 +52,10 @@ public class CityEndpoint extends CrudEndpoint<City, Long, CityDao, CityService>
     public Response findCityByIbge(@PathParam("ibge") Integer ibge) {
         return ok(service.get().findCityByIbge(ibge));
     }
+
+    @GET
+    @Path("/find-cities-by-state/{state}")
+    public Response findCitiesByState(@PathParam("state") String state) {
+        return ok(service.get().findCitiesByState(state));
+    }
 }
