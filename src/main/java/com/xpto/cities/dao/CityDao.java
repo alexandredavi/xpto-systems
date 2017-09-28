@@ -31,4 +31,16 @@ public class CityDao extends LogicExclusionCrudDao<City, Long> {
         TypedQuery<CitiesByStateDto> query = em.createQuery(sb.toString(), CitiesByStateDto.class);
         return query.getResultList();
     }
+
+    public City findCityByIbge(Integer igbe) {
+        StringBuilder sb = new StringBuilder();
+        sb.append("SELECT c FROM City c ");
+        sb.append("WHERE c.ibge = :ibge ");
+
+        TypedQuery<City> query = em.createQuery(sb.toString(), City.class);
+        query.setParameter("ibge", igbe);
+        query.setMaxResults(1);
+
+        return query.getSingleResult();
+    }
 }

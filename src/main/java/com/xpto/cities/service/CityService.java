@@ -55,4 +55,8 @@ public class CityService extends CrudService<City, Long, CityDao> {
     public List<CitiesByStateDto> numberOfCitiesByState() {
         return dao.get().numberOfCitiesByState();
     }
+
+    public City findCityByIbge(Integer ibge) {
+        return dao.get().findCityByIbge(ibge);
+    }
 }

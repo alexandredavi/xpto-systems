@@ -7,10 +7,7 @@ import org.jboss.resteasy.annotations.providers.multipart.MultipartForm;
 import org.jboss.resteasy.plugins.providers.multipart.InputPart;
 import org.jboss.resteasy.plugins.providers.multipart.MultipartFormDataInput;
 
-import javax.ws.rs.Consumes;
-import javax.ws.rs.GET;
-import javax.ws.rs.POST;
-import javax.ws.rs.Path;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.io.IOException;
@@ -48,5 +45,11 @@ public class CityEndpoint extends CrudEndpoint<City, Long, CityDao, CityService>
     @Path("/number-of-cities-by-state")
     public Response numberOfCitiesByState() {
         return ok(service.get().numberOfCitiesByState());
+    }
+
+    @GET
+    @Path("/find-city-by-ibge/{ibge}")
+    public Response findCityByIbge(@PathParam("ibge") Integer ibge) {
+        return ok(service.get().findCityByIbge(ibge));
     }
 }
