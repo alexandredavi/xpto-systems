@@ -54,4 +54,15 @@ public class CityDao extends LogicExclusionCrudDao<City, Long> {
 
         return query.getResultList();
     }
+
+    public List<City> findCitiesByAttribute(String attribute, String filter) {
+        StringBuilder sb = new StringBuilder();
+        sb.append("SELECT c FROM City c ");
+        sb.append("WHERE UPPER(CAST(c.").append(attribute).append(" AS string)) = UPPER(:filter) ");
+
+        TypedQuery<City> query = em.createQuery(sb.toString(), City.class);
+        query.setParameter("filter", filter);
+
+        return query.getResultList();
+    }
 }

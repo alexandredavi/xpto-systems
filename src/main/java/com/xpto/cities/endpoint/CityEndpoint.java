@@ -58,4 +58,10 @@ public class CityEndpoint extends CrudEndpoint<City, Long, CityDao, CityService>
     public Response findCitiesByState(@PathParam("state") String state) {
         return ok(service.get().findCitiesByState(state));
     }
+
+    @GET
+    @Path("/find-cities-by-csv-column/{column}/{filter}")
+    public Response findCitiesByCsvColumn(@PathParam("column") String column, @PathParam("filter") String filter) {
+        return ok(service.get().findCitiesByCsvColumn(column, filter));
+    }
 }

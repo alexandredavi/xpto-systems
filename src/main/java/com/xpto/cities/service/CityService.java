@@ -3,16 +3,14 @@ package com.xpto.cities.service;
 import com.xpto.cities.dao.CityDao;
 import com.xpto.cities.dto.CitiesByStateDto;
 import com.xpto.cities.entity.City;
+import com.xpto.cities.utils.CsvUtils;
 
 import javax.ejb.Stateless;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Collectors;
 
 import static com.xpto.cities.utils.CsvUtils.*;
@@ -62,5 +60,13 @@ public class CityService extends CrudService<City, Long, CityDao> {
 
     public List<City> findCitiesByState(String state) {
         return dao.get().findCitiesByState(state);
+    }
+
+    public List<City> findCitiesByCsvColumn(String column, String filter) {
+        String attribute = CsvUtils.RELATION_CSV_ENTITY.get(column);
+        if (attribute == null) {
+            return new ArrayList<>();
+        }
+        return dao.get().findCitiesByAttribute(attribute, filter);
     }
 }
