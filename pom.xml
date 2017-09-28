@@ -43,6 +43,12 @@
                         </goals>
                     </execution>
                 </executions>
+                <configuration>
+                    <debugPort>5005</debugPort>
+                    <properties>
+                        <swarm.debug.port>5005</swarm.debug.port>
+                    </properties>
+                </configuration>
             </plugin>
         </plugins>
     </build>
@@ -96,4 +102,6 @@
             </exclusions>
         </dependency>
     </dependencies>
+
+
 </project>
