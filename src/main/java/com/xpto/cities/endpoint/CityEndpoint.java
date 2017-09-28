@@ -70,4 +70,11 @@ public class CityEndpoint extends CrudEndpoint<City, Long, CityDao, CityService>
     public Response countRegisterByColumn(@PathParam("column") String column) {
         return ok(service.get().countRegisterByColumn(column));
     }
+
+    @GET
+    @Path("/count-all")
+    public Response countAll() {
+        return ok(service.get().findAll().size());
+    }
+
 }
