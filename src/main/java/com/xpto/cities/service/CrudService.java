@@ -10,7 +10,7 @@ import java.util.List;
 public class CrudService<E extends BaseEntity<ID>, ID, D extends CrudDao<E, ID>> {
 
     @Inject
-    private Instance<D> dao;
+    protected Instance<D> dao;
 
     public E insert(final E entity) {
         return dao.get().insert(entity);

@@ -8,6 +8,7 @@ import org.jboss.resteasy.plugins.providers.multipart.InputPart;
 import org.jboss.resteasy.plugins.providers.multipart.MultipartFormDataInput;
 
 import javax.ws.rs.Consumes;
+import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.core.MediaType;
@@ -31,4 +32,9 @@ public class CityEndpoint extends CrudEndpoint<City, Long, CityDao, CityService>
         return ok();
     }
 
+    @GET
+    @Path("/capitals")
+    public Response getCapitals() {
+        return ok(service.get().getCapitals());
+    }
 }
