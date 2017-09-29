@@ -6,7 +6,7 @@ install:
   - mvn package -DskipTests
   - mvn wildfly-swarm:package
 
-after_install:
+after_success:
   - zip xpto-systems.zip Dockerfile Dockerrun.aws.json target/cities-swarm.jar
 
 deploy:
