@@ -2,7 +2,7 @@ language: java
 sudo: required
 
 install:
-  - chown -R alexandredavi:alexandredavi/home/travis/build/alexandredavi
+  - chown -R alexandredavi:alexandredavi /home/travis/build/alexandredavi
   - sudo mvn install -DskipTests
   - sudo mvn package
   - sudo mvn wildfly-swarm:package
