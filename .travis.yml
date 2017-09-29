@@ -7,8 +7,9 @@ install:
   - mvn package
   - mvn wildfly-swarm:package
 
-before_install:
-  - sudo  zip -r xpto-systems.zip Dockerfile Dockerrun.aws.json cities-swarm.jar
+after_install:
+  - sudo su
+  - zip -r xpto-systems.zip Dockerfile Dockerrun.aws.json cities-swarm.jar
 
 deploy:
   provider: elasticbeanstalk
