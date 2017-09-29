@@ -1,0 +1,15 @@
+language: java
+
+mvn install -DskipTests
+mvn package
+mvn wildfly-swarm:package
+
+deploy:
+  provider: elasticbeanstalk
+  access_key_id: <AKIAIBGILBEGKPSOPBWA>
+  secret_access_key:
+    secure: "Encypted <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>="
+  region: "us-east-1"
+  app: "teste"
+  env: "xpto-env"
+  bucket_name: "elasticbeanstalk-us-east-1-591410694623"
