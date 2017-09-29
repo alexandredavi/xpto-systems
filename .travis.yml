@@ -12,9 +12,9 @@ after_success:
 deploy:
   skip_cleanup: true
   provider: elasticbeanstalk
-  access_key_id: AKIAIYDUAKIJ2UOGI33Q
+  access_key_id: $AWS_ACCESS_KEY_ID
   secret_access_key:
-    secure: "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"
+    secure: $AWS_SECRET_KEY
   region: "us-east-1"
   app: "teste"
   env: "xpto-env"
