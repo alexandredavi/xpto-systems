@@ -36,7 +36,7 @@
     </dependencyManagement>
 
     <build>
-        <finalName>demo</finalName>
+        <finalName>cities</finalName>
         <plugins>
             <plugin>
                 <groupId>org.wildfly.swarm</groupId>
@@ -50,12 +50,15 @@
                         </goals>
                     </execution>
                 </executions>
-                <!--<configuration>-->
+                <configuration>
+                    <properties>
+                        <java.net.preferIPv4Stack>true</java.net.preferIPv4Stack>
+                    </properties>
                 <!--<debugPort>5005</debugPort>-->
                 <!--<properties>-->
                 <!--<swarm.debug.port>5005</swarm.debug.port>-->
                 <!--</properties>-->
-                <!--</configuration>-->
+                </configuration>
             </plugin>
         </plugins>
     </build>
