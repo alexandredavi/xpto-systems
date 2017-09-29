@@ -5,11 +5,7 @@ install:
   - mvn install -DskipTests
   - mvn package -DskipTests
   - mvn wildfly-swarm:package
-  - ls
-  - pwd
   - zip xpto-systems.zip Dockerfile Dockerrun.aws.json target/cities-swarm.jar
-  - ls
-  - pwd
 
 deploy:
   skip_cleanup: true
@@ -21,4 +17,4 @@ deploy:
   app: "teste"
   env: "xpto-env"
   bucket_name: "elasticbeanstalk-us-east-1-591410694623"
-  zip_file: "/home/travis/build/alexandredavi/xpto-systems/xpto-systems.zip"
+  zip_file: "xpto-systems.zip"
