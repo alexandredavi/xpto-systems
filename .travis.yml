@@ -3,10 +3,8 @@ sudo: required
 
 install:
   - mvn install -DskipTests
-  - mvn package
+  - mvn package -DskipTests
   - mvn wildfly-swarm:package
-
-after_install:
   - zip -r xpto-systems.zip Dockerfile Dockerrun.aws.json cities-swarm.jar
 
 deploy:
