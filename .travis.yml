@@ -20,4 +20,4 @@ deploy:
   app: "teste"
   env: "xpto-env"
   bucket_name: "elasticbeanstalk-us-east-1-591410694623"
-  zip_file: "xpto-systems.zip"
+  zip_file: "/home/travis/build/alexandredavi/xpto-systems/xpto-systems.zip"
