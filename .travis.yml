@@ -17,6 +17,6 @@ deploy:
     secure: $AWS_SECRET_KEY
   region: "us-east-1"
   app: "teste"
-  env: "xpto-env"
-  bucket_name: "elasticbeanstalk-us-east-1-591410694623"
+  env: "Xpto-env"
+  bucket_name: "elasticbeanstalk-us-east-1-553649883080"
   zip_file: "xpto-systems.zip"
