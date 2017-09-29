@@ -12,6 +12,7 @@ install:
   - pwd
 
 deploy:
+  skip_cleanup: true
   provider: elasticbeanstalk
   access_key_id: <AKIAIBGILBEGKPSOPBWA>
   secret_access_key:
