@@ -19,25 +19,28 @@ import java.net.URL;
 @RunAsClient
 public abstract class AbstractTest {
 
-	@ArquillianResource
-	protected URL url;
-	
-	protected Client client = ClientBuilder.newClient();
-	
-	@Deployment
-	public static Archive<?> createDeployment() {	
-		File[] files = Maven.resolver()
-				.loadPomFromFile("pom.xml")
-				.importRuntimeAndTestDependencies()
-				.resolve()
-				.withTransitivity()
-				.asFile();
-		
-	    JAXRSArchive deployment = ShrinkWrap.create(JAXRSArchive.class);
-	    deployment.addPackages(true, "com.xpto.cities");
-	    deployment.addAsLibraries(files);
-	    
-	    return deployment;
-	}
+    @ArquillianResource
+    protected URL url;
+
+    protected Client client = ClientBuilder.newClient();
+
+    @Deployment
+    public static Archive<?> createDeployment() {
+        File[] files = Maven.resolver()
+                .loadPomFromFile("pom.xml")
+                .importCompileAndRuntimeDependencies()
+                .resolve()
+                .withTransitivity()
+                .asFile();
+
+        JAXRSArchive deployment = ShrinkWrap.create(JAXRSArchive.class);
+        deployment.addAsResource("test-persistence.xml", "META-INF/persistence.xml");
+        deployment.addAsResource("project-defaults.yml");
+        deployment.addAsResource("db/migration");
+        deployment.addPackages(true, "com.xpto.cities");
+        deployment.addAsLibraries(files);
+
+        return deployment;
+    }
 
 }

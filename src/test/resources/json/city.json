@@ -1,0 +1,10 @@
+{
+  "ibge": 1234567,
+  "uf": "SC",
+  "name": "Minha cidade",
+  "capital": "false",
+  "longitude": -63.8314456544,
+  "latitude": "-8.76889179",
+  "microRegion": "Minha microregion",
+  "mesoregion": "Minha mesoregion"
+}

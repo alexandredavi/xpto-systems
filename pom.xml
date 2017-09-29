@@ -50,12 +50,12 @@
                         </goals>
                     </execution>
                 </executions>
-                <!--<configuration>
-                    <debugPort>5005</debugPort>
-                    <properties>
-                        <swarm.debug.port>5005</swarm.debug.port>
-                    </properties>
-                </configuration>-->
+                <!--<configuration>-->
+                <!--<debugPort>5005</debugPort>-->
+                <!--<properties>-->
+                <!--<swarm.debug.port>5005</swarm.debug.port>-->
+                <!--</properties>-->
+                <!--</configuration>-->
             </plugin>
         </plugins>
     </build>
@@ -83,7 +83,7 @@
         </dependency>
         <dependency>
             <groupId>org.wildfly.swarm</groupId>
-            <artifactId>jaxrs</artifactId>
+            <artifactId>jaxrs-jaxb</artifactId>
         </dependency>
         <dependency>
             <groupId>org.wildfly.swarm</groupId>
@@ -98,6 +98,12 @@
             <artifactId>postgresql</artifactId>
             <version>9.4.1212</version>
         </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>r05</version>
+        </dependency>
+
         <dependency>
             <groupId>org.wildfly.swarm</groupId>
             <artifactId>jaxrs-multipart</artifactId>
@@ -120,12 +126,27 @@
             <scope>test</scope>
         </dependency>
         <dependency>
+            <groupId>org.jboss.arquillian.protocol</groupId>
+            <artifactId>arquillian-protocol-servlet</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
             <version>1.4.196</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.jboss.resteasy</groupId>
+            <artifactId>resteasy-client</artifactId>
+            <version>3.1.4.Final</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.jboss.resteasy</groupId>
+            <artifactId>resteasy-jackson-provider</artifactId>
+            <version>3.1.4.Final</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
-
-
 </project>

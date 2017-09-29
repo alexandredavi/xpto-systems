@@ -5,6 +5,9 @@ public class CitiesByStateDto {
     private String state;
     private Long number;
 
+    public CitiesByStateDto() {
+    }
+
     public CitiesByStateDto(String state, Long number) {
         this.state = state;
         this.number = number;
