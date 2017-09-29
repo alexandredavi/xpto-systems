@@ -2,13 +2,12 @@ language: java
 sudo: required
 
 install:
-  - chown -R alexandredavi:alexandredavi /home/travis/build/alexandredavi
-  - sudo mvn install -DskipTests
-  - sudo mvn package
-  - sudo mvn wildfly-swarm:package
+  - mvn install -DskipTests
+  - mvn package
+  - mvn wildfly-swarm:package
 
 after_install:
-  - sudo zip -r xpto-systems.zip Dockerfile Dockerrun.aws.json cities-swarm.jar
+  - zip -r xpto-systems.zip Dockerfile Dockerrun.aws.json cities-swarm.jar
 
 deploy:
   provider: elasticbeanstalk
