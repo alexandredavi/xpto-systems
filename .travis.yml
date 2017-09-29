@@ -12,9 +12,9 @@ after_success:
 deploy:
   skip_cleanup: true
   provider: elasticbeanstalk
-  access_key_id: <AKIAIBGILBEGKPSOPBWA>
+  access_key_id: AKIAIBGILBEGKPSOPBWA
   secret_access_key:
-    secure: "Encypted <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>="
+    secure: "PFmaQKOTTf7F/H/qB9gl4BUU3kIhe+CvUzmqOoBwktxXqwXqBRCezFjKFFGe6uTWfNv+4t45rWv9ew2GaNMC3xQZp5jo2HPkY6/4+Q15L9gziJn31peGaFhBjJQCoqqeBiURJJ5pJVMVyw45HwdPBqb/P7SuhZrAIX/Qzj1Nf2avmIo0gKerSsvjLpCglCTbB27EY5aZ1fEH96MNp5dvhThOsds7cJieAk/+WoXoI7iGAJSZP2Sds5GUETPfG51jdgExRF0HvTJ06RgDMzQVC7Tn6XtPjZRwOUQo3t9z52boY2Xl08KnVpuFeTz0NapVemrOh74n5g+KJyesjbdkP57zExws3qeqiEOgNh1iA6iZpQuMjeM1KC9tGtgkUgrdpFbgg2JFF+9zMYqkFNCQr+Vw4Wa7s4o8Dciy89rfhwXgZ6H4Nalr0n0/M2jqaq/vMFi+dnAUwxzmfVlh7u+Iy+szgFVTd4sSFua7y25syw4sZ2gjcCKa5HnMv/kJfoQc3byKp6M+sxGjFtJdCET2NIlrClUJG/bJcY3HSjAv7CNnx/w5pEJ0xN/71HVr9wbTZiRKLh2LDQOiUuDkwISe/83HkCLAdEvS9+QrZugNQYdIL6KdvuB9ci6pKbMxkgm+c7cThK+TG5UDlS5TbbG4KBUq9Pa9XZPvCTt4wDBMmQA"
   region: "us-east-1"
   app: "teste"
   env: "xpto-env"
