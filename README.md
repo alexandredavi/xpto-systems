@@ -1,3 +1,8 @@
+[![Build Status](https://travis-ci.org/alexandredavi/xpto-systems.svg?branch=master)](https://travis-ci.org/alexandredavi/xpto-systems)
+[![GitHub issues](https://img.shields.io/github/issues/alexandredavi/xpto-systems.svg)](https://github.com/alexandredavi/xpto-systems/issues)
+[![GitHub stars](https://img.shields.io/github/stars/alexandredavi/xpto-systems.svg)](https://github.com/alexandredavi/xpto-systems/stargazers)
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/alexandredavi/xpto-systems/master/LICENSE)
+
 # xpto-systems
 Leitura e manutenção de cidades de um arquivo CSV feito com Java
 
